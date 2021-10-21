@@ -2,6 +2,7 @@ package com.kodilla.testing.shape;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ShapeCollector {
     private Shape shape;
@@ -49,6 +50,19 @@ public class ShapeCollector {
                 ", field=" + this.field +
                 ", myObj=" + myObj +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ShapeCollector collector = (ShapeCollector) o;
+        return field == collector.field && Objects.equals(shape, collector.shape);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(shape, field);
     }
 }
 
