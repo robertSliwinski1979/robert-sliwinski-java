@@ -33,7 +33,6 @@ public class ShapeCollectorTestSuite {
         collection.addFigure(shape1);
         //THEN
         Assertions.assertEquals(1,collection.getFigureQuantity());
-
     }
 
     @Test
@@ -47,6 +46,7 @@ public class ShapeCollectorTestSuite {
         boolean result= collection1.removeFigure(shape1); // will generate true
         boolean results= collection1.removeFigure(shape1); // will generate false
         //Then
+        Assertions.assertTrue(result);
         Assertions.assertFalse(results);
         Assertions.assertEquals(0,collection1.getFigureQuantity());
     }
@@ -100,5 +100,4 @@ public class ShapeCollectorTestSuite {
         //Then
         collection5.showFigures();
     }
-
 }

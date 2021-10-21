@@ -1,27 +1,17 @@
 package com.kodilla.testing.shape;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class ShapeCollector {
     private Shape shape;
      private int field;
+    public List<Shape> myObj= new ArrayList<>();
+
 
     public ShapeCollector(Shape shape) {
         this.shape = shape;
-        this.field = field;
     }
-
-    @Override
-    public String toString() {
-        return "ShapeCollector{" +
-                "shape=" + shape +
-                ", field=" + this.field +
-                ", myObj=" + myObj +
-                '}';
-    }
-
-    public List<Shape> myObj= new ArrayList<>();
 
     public void addFigure(Shape shape){
         myObj.add(shape);
@@ -52,5 +42,13 @@ public class ShapeCollector {
         return myObj.size();
     }
 
+    @Override
+    public String toString() {
+        return "ShapeCollector{" +
+                "shape=" + shape +
+                ", field=" + this.field +
+                ", myObj=" + myObj +
+                '}';
+    }
 }
 
