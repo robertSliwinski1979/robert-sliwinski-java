@@ -42,18 +42,7 @@ public class WorldTestSuite {
         America.addCountry(new Country("Brazil", brazilPeople));
         America.addCountry(new Country("Mexico", mexicoPeople));
 
-
         //Then
-//        System.out.println("First test: "+Africa.getPeopleQuantity());
-//        System.out.println("Tanzania people test: "+tanzania.getPeopleQuantity());
-//        System.out.println("Somalia people test: "+somalia.getPeopleQuantity());
-//        System.out.println("next Af test: "+Africa.getQuantityOfCountries());
-//        System.out.println("next Eu test: "+Europe.getQuantityOfCountries());
-//        System.out.println("next As test: "+Asia.getQuantityOfCountries());
-//        System.out.println("next Am test: "+America.getQuantityOfCountries());
-//        System.out.println("1. "+malaysia.getPeopleQuantity());
-//        System.out.println("2. "+brazil.getNameOfCountry());
-//        System.out.println("3. "+poland.getNameOfCountry());
         assertEquals(2, Europe.getQuantityOfCountries());
         assertEquals(3, Asia.getQuantityOfCountries());
         assertEquals(2, America.getQuantityOfCountries());
@@ -68,7 +57,6 @@ public class WorldTestSuite {
         assertEquals(expectedAsia, Asia.getPeopleQuantity());
         assertEquals(expectedAfrica, Africa.getPeopleQuantity());
         assertEquals(expectedAmerica, America.getPeopleQuantity());
-
     }
 
     @Test
@@ -105,9 +93,14 @@ public class WorldTestSuite {
 
         //When
         World world = new World("world");
-        System.out.println("this is test: "+world.getQuantityOfAllPeople());
+        world.addContinentToTheWorld(Africa);
+        world.addContinentToTheWorld(Asia);
+        world.addContinentToTheWorld(Europe);
+        world.addContinentToTheWorld(America);
+
+        BigDecimal peopleOfWorldActual = new BigDecimal("10000000000");
 
         //Then
-
+        assertEquals(peopleOfWorldActual,world.getQuantityOfAllPeople());
     }
 }

@@ -1,7 +1,9 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.forumUser.Forum;
 import com.kodilla.stream.forumUser.ForumUser;
+import com.kodilla.stream.iterate.NumbersGenerator;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -10,6 +12,7 @@ import java.util.stream.Collectors;
 
 public class StreamMain {
     public static void main(String[] args) {
+
 
 //        System.out.println("Welcome to module7 - Stream");
 //        SaySomething saySomething = new SaySomething();
@@ -35,12 +38,12 @@ public class StreamMain {
 //        a1.executeExpression(3, 4, FunctionalCalculator::multiplyAByB);
 //        a1.executeExpression(1,1,FunctionalCalculator::divideAByB);
 //
-//        System.out.println("Task to write 7.1");
-//        PoemBeautifier poemBeautifier = new PoemBeautifier();
-//        System.out.println(poemBeautifier.beutify("Ala",word -> word.toLowerCase()));
-//        System.out.println(poemBeautifier.beutify("Ala",word -> word.toUpperCase()));
-//        System.out.println(poemBeautifier.beutify("Ala",word -> word+"_ABC"));
-//        System.out.println(poemBeautifier.beutify("Ala",word -> "ABC_"+word));
+        System.out.println("Task to write 7.1");
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        System.out.println(poemBeautifier.beutify("Ala",word -> word.toLowerCase()));
+        System.out.println(poemBeautifier.beutify("Ala",word -> word.toUpperCase()));
+        System.out.println(poemBeautifier.beutify("Ala",word -> word+"_ABC"));
+        System.out.println(poemBeautifier.beutify("Ala",word -> "ABC_"+word));
 //
 //        System.out.println("Using stream to generate even numbers");
 //        NumbersGenerator.generateEven(20);

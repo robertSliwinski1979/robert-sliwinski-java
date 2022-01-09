@@ -5,9 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class Continent {
-    //private final Country country;
     private final String nameOfContinent;
     private final List<Country> listOfCountries = new ArrayList<>();
+
+    public List<Country> showCountries() {
+        return listOfCountries;
+    }
 
     public void addCountry(Country someCountry) {
         listOfCountries.add(someCountry);
@@ -21,10 +24,6 @@ public final class Continent {
         nameOfContinent = name;
     }
 
-//    public Country getCountry() {
-//        return this.country;
-//    }
-
     public String getNameOfContinent() {
         return nameOfContinent;
     }
@@ -36,8 +35,8 @@ public final class Continent {
     @Override
     public String toString() {
         return "Continent{" +
-                //   "country=" + country.getNameOfCountry() +
                 ", nameOfContinent='" + nameOfContinent + '\'' +
+                "country=" + listOfCountries +
                 '}';
     }
 
