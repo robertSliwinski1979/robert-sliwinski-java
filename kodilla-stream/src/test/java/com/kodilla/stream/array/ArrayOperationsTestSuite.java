@@ -13,7 +13,7 @@ public class ArrayOperationsTestSuite {
 
         //When
         double expected = 38.4;
-        double actual = ArrayMainClass.getAverage(num);
+        double actual = ArrayOperations.getAverage(num);
 
         //Then
         assertEquals(expected,actual);
