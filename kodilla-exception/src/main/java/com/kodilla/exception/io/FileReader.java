@@ -9,20 +9,29 @@ import java.util.stream.Stream;
 
 public class FileReader {
 
-    public void readFile() {
+    public void readFile() throws FileReaderException {
+
         ClassLoader classloader = getClass().getClassLoader();
         File file = new File(classloader.getResource("names.txt").getFile());
-        //Path path = Paths.get(file.getPath());
-        //Path path = Paths.get("tego-pliku-nie-ma.txt");  // ->make error just to see how it works
 
         try (Stream<String> fileLines = Files.lines(Paths.get(file.getPath()))) {
-            //Stream<String> fileLines = Files.lines(path);     ->put in try + (change path)
             fileLines.forEach(System.out::println);
         } catch (IOException e) {
-            System.out.println("Oh no! Something went wrong! Error:" + e);
+            throw new FileReaderException();            // dodajemy tą linię gdy ->throw + throws przy nazwie metody
         }finally {
-            System.out.println("I am gonna be here... always!");
+            System.out.println("I am gonna be here... always!111");
         }
+    }
 
+    public void readFile(final String fileName) throws FileReaderException {
+        ClassLoader classLoader = getClass().getClassLoader();
+
+        try (Stream<String> fileLines = Files.lines(Path.of(classLoader.getResource(fileName).toURI()))) {
+            fileLines.forEach(System.out::println);
+        } catch (Exception e) {
+            throw new FileReaderException();
+        } finally {
+            System.out.println("I am gonna be here... always!222");
+        }
     }
 }
