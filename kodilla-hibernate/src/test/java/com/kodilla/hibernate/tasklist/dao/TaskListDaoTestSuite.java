@@ -3,6 +3,7 @@ package com.kodilla.hibernate.tasklist.dao;
 import com.kodilla.hibernate.task.TaskList;
 import com.kodilla.hibernate.task.dao.TaskListDao;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,6 +13,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
+@Disabled
 public class TaskListDaoTestSuite {
     private static final String DESCRIPTION = "Test: Homework 17.2";
     @Autowired
