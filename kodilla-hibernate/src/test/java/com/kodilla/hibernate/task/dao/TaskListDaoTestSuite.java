@@ -3,6 +3,7 @@ package com.kodilla.hibernate.task.dao;
 import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
 import com.kodilla.hibernate.task.TaskList;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
+@Disabled
 public class TaskListDaoTestSuite {
 
     @Autowired
